@@ -1,8 +1,9 @@
 module github.com/PDMtel/PDM
 
-go 1.14
+go 1.12
 
 require (
-	github.com/pkg/errors v0.9.1 // indirect
-	gopkg.in/tucnak/telebot.v2 v2.3.4 // indirect
+	github.com/joho/godotenv v1.3.0
+	github.com/yanzay/tbot v1.0.0 // indirect
+	github.com/yanzay/tbot/v2 v2.0.1
 )
