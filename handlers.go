@@ -8,18 +8,13 @@ import (
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	msg := "Welcome to Porus. My Prous(bot) is currently in beta phase, keep in mind I made this pretty quickly.\n There may be bugs. Please report all issues to with the /ISSUEREPORT command. \nCommands:\n1. Use /help for more information \n2. Use /order to view current scores.\n3. Use /orlate to report late orders. \n4. Use /orsupport for help with a completed order"
+	msg := "This is a bot whose sole purpose is to play rock, paper, scissors with you.\nCommands:\n1. Use /play to play.\n2. Use /score to view current scores.\n3. Use /reset to reset scores."
 	a.client.SendMessage(m.Chat.ID, msg)
 }
 
 // Handle the /play command here
 func (a *application) playHandler(m *tbot.Message) {
 	buttons := makeButtons()
-	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
-}
-// play command copy made into order
-func (a *application) orderHandler(m *tbot.Message) {
-	buttons := makeButtonso()
 	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
 }
 
