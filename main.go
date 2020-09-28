@@ -42,8 +42,11 @@ func main() {
 	app.client = bot.Client()
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
-	bot.HandleMessage("/order", app.orderHandler)
 	bot.HandleMessage("/score", app.scoreHandler)
+	bot.HandleMessage("/reset", app.resetHandler)
+	bot.HandleCallback(app.callbackHandler)
+	log.Fatal(bot.Start())
+}
 	bot.HandleMessage("/reset", app.resetHandler)
 	bot.HandleMessage("/reset", app.resetHandler)
 	log.Fatal(bot.Start())
