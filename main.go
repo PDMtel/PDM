@@ -47,7 +47,3 @@ func main() {
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
-	bot.HandleMessage("/reset", app.resetHandler)
-	bot.HandleMessage("/reset", app.resetHandler)
-	log.Fatal(bot.Start())
-}
