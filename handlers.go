@@ -18,8 +18,8 @@ func (a *application) playHandler(m *tbot.Message) {
 	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
 }
 // play command copy made into order
-func (a *application) playHandler(m *tbot.Message) {
-	buttons := makeButtons()
+func (a *application) orderHandler(m *tbot.Message) {
+	buttons := makeButtonso()
 	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
 }
 
