@@ -17,6 +17,11 @@ func (a *application) playHandler(m *tbot.Message) {
 	buttons := makeButtons()
 	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
 }
+// play command copy made into order
+func (a *application) playHandler(m *tbot.Message) {
+	buttons := makeButtons()
+	a.client.SendMessage(m.Chat.ID, "Pick an option:", tbot.OptInlineKeyboardMarkup(buttons))
+}
 
 // Handle the /score command here
 func (a *application) scoreHandler(m *tbot.Message) {
