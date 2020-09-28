@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+
 	"github.com/yanzay/tbot/v2"
 )
 
