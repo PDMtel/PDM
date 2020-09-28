@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-
+	"reflect"
 	"github.com/yanzay/tbot/v2"
 )
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	chatid string := m.Chat.ID
-	msg := "This is a bot whose sole purpose is to play rock, paper, scissors with you.\nCommands:\n1. Use /play to play.\n2. Use /score to view current scores.\n3. Use /reset to reset scores."+chatid
+	chatids = fmt.Println(reflect.TypeOf(m.chat.ID).String())
+	msg := "This is a bot whose sole purpose is to play rock, paper, scissors with you.\nCommands:\n1. Use /play to play.\n2. Use /score to view current scores.\n3. Use /reset to reset scores." + chatids + "yep"
 	a.client.SendMessage(m.Chat.ID, msg)
 }
 
