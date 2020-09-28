@@ -34,28 +34,6 @@ func makeButtons() *tbot.InlineKeyboardMarkup {
 		},
 	}
 }
-//makebutton clone for order
-func makeButtonso() *tbot.InlineKeyboardMarkup {
-	// Create butttons with visible Text and CallbackData as a value.
-	btnCash := tbot.InlineKeyboardButton{
-		Text:         "Cashapp Accounts",
-		CallbackData: "rock",
-	}
-	btnPhone := tbot.InlineKeyboardButton{
-		Text:         "Phone Packages",
-		CallbackData: "paper",
-	}
-	btnConsul := tbot.InlineKeyboardButton{
-		Text:         "Schedule Consultations",
-		CallbackData: "scissors",
-	}
-	return &tbot.InlineKeyboardMarkup{
-		InlineKeyboard: [][]tbot.InlineKeyboardButton{
-			[]tbot.InlineKeyboardButton{btnCash, btnPhone, btnConsul},
-		},
-	}
-}
-
 
 func (a *application) draw(humanMove string) (msg string) {
 	var result string
