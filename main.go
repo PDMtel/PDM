@@ -9,12 +9,12 @@ import (
 )
 
 type score struct {
-	wins, draws, losses uint
+	wins, draws, losses uint // wins, draws, losses uint 
 }
 
 type application struct {
-	client *tbot.Client
-	score
+	client *tbot.Client //client *tbot.Client
+	score // score
 }
 
 var (
@@ -44,6 +44,10 @@ func main() {
 	bot.HandleMessage("/play", app.playHandler)
 	bot.HandleMessage("/score", app.scoreHandler)
 	bot.HandleMessage("/reset", app.resetHandler)
+	
+	bot.HandleMessage("/ps", app.psHandler)
+	bot.HandleMessage("/porus", app.porusHandler)
+
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
