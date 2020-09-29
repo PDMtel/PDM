@@ -42,7 +42,7 @@ func (a *application) psHandler(m *tbot.Message) {
 	//msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, Cashapph)
-	a.client.SendMessage(m.Chat.ID, Cashappmag)
+	a.client.SendMessage(m.Chat.ID, Cashappmsg)
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
