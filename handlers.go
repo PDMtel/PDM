@@ -10,7 +10,7 @@ import (
 func (a *application) startHandler(m *tbot.Message) {
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	msg := "This is a bot whose sole purpose is to play rock, paper, scissors with you.\nCommands:\n1. Use /play to play.\n2. Use /score to view current scores.\n3. Use /reset to reset scores."
-	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d", m.Chat.ID, m.Message.MessageID)
+	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d", m.Chat.ID, m.MessageID)
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(adminID, msgadmin)
 	
