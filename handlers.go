@@ -30,15 +30,15 @@ func (a *application) porusHandler(m *tbot.Message) {
 func (a *application) psHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	Cashapph := fmt.Sprintf("\n { ---Anonymous Cashapp Accounts--- } \n%s %s %s", cashappi, cashappp, cashappo)
+	Cashapph := fmt.Sprintf("\n { ---Anonymous Cashapp Accounts--- } \n%s %s %s", Cashappi, Cashappp, Cashappo)
 	Cashappi := fmt.Sprintf("Safest & Freshest Accounts On The Market! \n We NEVER sell you stolen or hot accounts. ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.")
 	Cashappp := fmt.Sprintf("[+] Current Price Is: \n> Single Purchase: $500 \n> 2 Cashapp accounts: $900\n> 5 Cashapp Accounts: $1500  (IF MORE THAN THIS CONTINUE")
-	Cashappo := fmt.Sprintf("I am currently not ready to automate this order yet! \n TO PLACE A ORDER FOLLOW EVERY STEP, \n Message @XskotosX On Telegram This Message: \n YES IT HAS TO LOOK LIKE THIS. COPY N PASTE. %s ORDER: CASHAPP ACCOUNT ". cashappmsg)
+	Cashappo := fmt.Sprintf("I am currently not ready to automate this order yet! \n TO PLACE A ORDER FOLLOW EVERY STEP, \n Message @XskotosX On Telegram This Message: \n YES IT HAS TO LOOK LIKE THIS. COPY N PASTE. %s ORDER: CASHAPP ACCOUNT ". Cashappmsg)
 	cashappmsg := fmt.Sprintf("\n Order: *CASHAPP ACCOUNT*\n Quantity: *1or2or5*\n Payment Method: *BTCorCASHAPP\n Address: *For CshAPP Card*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
 	msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
-	a.client.SendMessage(m.Chat.ID, cashapph)
+	a.client.SendMessage(m.Chat.ID, Cashapph)
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
