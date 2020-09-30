@@ -40,6 +40,17 @@ func (a *application) psHandler(m *tbot.Message) {
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
+func (a *application) lateHandler(m *tbot.Message) {
+	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
+	msg := "[InternalMem@Porus]:\n If your reporting a late order: \n\n I apologize, I will give you a gift for your patience and understanding. I admit my communication, organization, delivery times are still improving. That is exactly why I devleop things like this to save me time. I am not a 'snap trapper', but an enthusiast of technnology, security & privacy. I seen how vulnerable the game was and needed me. I joined mainly to help you & I enjoy it.\n\n\n To report a late order: \nCopy The Next Message As a Template\n"
+	msgh := "Order: LATE !!\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nOrder PlacedDate: *DoNotExaggerate\nYour Expecting: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
+	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
+	a.client.SendMessage(m.Chat.ID, msg)
+	a.client.SendMessage(m.Chat.ID, msgh)
+	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency	
+}
 
 func (a *application) pppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
