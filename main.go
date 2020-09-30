@@ -47,7 +47,8 @@ func main() {
 	bot.HandleMessage("/pc", app.pcHandler)
 	bot.HandleMessage("/ppi", app.ppiHandler)
 	bot.HandleMessage("/porus", app.porusHandler)
-
+	bot.HandleMessage("/late", app.lateHandler)
+	
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
 	bot.HandleMessage("/score", app.scoreHandler)
