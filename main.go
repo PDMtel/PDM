@@ -40,12 +40,12 @@ func init() {
 func main() {
 	bot = tbot.New(token, tbot.WithWebhook("https://tbotytt.herokuapp.com", ":"+os.Getenv("PORT")))
 	app.client = bot.Client()
+	bot.HandleMessage("/pauy", app.psauyHandler)
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
 	bot.HandleMessage("/score", app.scoreHandler)
 	bot.HandleMessage("/reset", app.resetHandler)
 	bot.HandleMessage("/ps", app.psHandler)
-	bot.HandleMessage("/pauy", app.psauyHandler)
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
