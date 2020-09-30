@@ -27,13 +27,13 @@ func (a *application) pppHandler(m *tbot.Message) {
 	pppp := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
 	pppo := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
 	
-	ppph := fmt.Sprintf("\n { ---Anonymous Phone Packages--- } \n%s %s %s", ps4d9i, ps4d9p, ps4d9o)
+	ppph := fmt.Sprintf("\n { ---Anonymous Phone Packages--- } \n%s %s %s", pppi, pppp, pppo)
 	
 	
 	//msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
-	a.client.SendMessage(m.Chat.ID, ps4d9h)
-	a.client.SendMessage(m.Chat.ID, ps4d9msg)
+	a.client.SendMessage(m.Chat.ID, ppph)
+	a.client.SendMessage(m.Chat.ID, pppmsg)
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
