@@ -18,16 +18,16 @@ func (a *application) startHandler(m *tbot.Message) {
 	
 }
 
-func (a *application) p4d9Handler(m *tbot.Message) {
+func (a *application) pppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	ps4d9msg := fmt.Sprintf("\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	pppmsg := fmt.Sprintf("\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
-	ps4d9i := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
-	ps4d9p := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
-	ps4d9o := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
+	pppi := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
+	pppp := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
+	pppo := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
 	
-	ps4d9h := fmt.Sprintf("\n { ---Anonymous Phone Packages--- } \n%s %s %s", ps4d9i, ps4d9p, ps4d9o)
+	ppph := fmt.Sprintf("\n { ---Anonymous Phone Packages--- } \n%s %s %s", ps4d9i, ps4d9p, ps4d9o)
 	
 	
 	//msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
@@ -75,22 +75,22 @@ func (a *application) p7e1Handler(m *tbot.Message) {
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
-func (a *application) p8j0Handler(m *tbot.Message) {
+func (a *application) ppiHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	ps8j0msg := fmt.Sprintf("\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	ppimsg := fmt.Sprintf("\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
-	ps8j0i := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
-	ps8j0p := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
-	ps8j0o := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
+	ppii := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
+	ppip := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
+	ppio := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
 	
-	ps8j0h := fmt.Sprintf("\n { ---Private Investigation--- } \n%s %s %s", ps8j0i, ps8j0p, ps8j0o)
+	ppih := fmt.Sprintf("\n { ---Private Investigation--- } \n%s %s %s", ppii, ppip, ppio)
 	
 	
 	//msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
-	a.client.SendMessage(m.Chat.ID, ps8j0h)
-	a.client.SendMessage(m.Chat.ID, ps8j0msg)
+	a.client.SendMessage(m.Chat.ID, ppih)
+	a.client.SendMessage(m.Chat.ID, ppimsg)
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
