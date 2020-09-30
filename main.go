@@ -45,7 +45,7 @@ func main() {
 	bot.HandleMessage("/score", app.scoreHandler)
 	bot.HandleMessage("/reset", app.resetHandler)
 	bot.HandleMessage("/ps", app.psHandler)
-	bot.HandleMessage("/psauy", app.psauyHandler)
+	bot.HandleMessage("/pauy", app.psauyHandler)
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
