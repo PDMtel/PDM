@@ -48,6 +48,7 @@ func main() {
 	bot.HandleMessage("/ppi", app.ppiHandler)
 	bot.HandleMessage("/porus", app.porusHandler)
 	bot.HandleMessage("/late", app.lateHandler)
+	bot.HandleMessage("/supp", app.suppHandler)
 	
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
