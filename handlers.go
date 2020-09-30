@@ -188,13 +188,6 @@ func (a *application) callbackHandler(cq *tbot.CallbackQuery) {
 	a.client.DeleteMessage(cq.Message.Chat.ID, cq.Message.MessageID)
 	a.client.SendMessage(cq.Message.Chat.ID, msg)
 }
-	msgh := "Order: LATE !!\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nOrder PlacedDate: *DoNotExaggerate\nYour Expecting: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
-	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
-	a.client.SendMessage(m.Chat.ID, msg)
-	a.client.SendMessage(m.Chat.ID, msgh)
-	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
-	// resourcefulness or expediency	
-}
 
 func (a *application) pppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
