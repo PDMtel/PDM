@@ -40,7 +40,7 @@ func (a *application) psHandler(m *tbot.Message) {
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
 }
-func (a *application) psauyHandler(m *tbot.Message) {
+func (a *application) pauyHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
 	// ps1y4msg := fmt.Sprintf("\n Order: *CASHAPP ACCOUNT*\n Quantity: *1or2or5*\n Payment Method: *BTCorCASHAPP\n Address: *For CshAPP Card*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
@@ -49,12 +49,12 @@ func (a *application) psauyHandler(m *tbot.Message) {
 	// ps1y4p := fmt.Sprintf("[+] Current Price Is: \n> Single Purchase: $500 \n> 2 Cashapp accounts: $900\n> 5 Cashapp Accounts: $1500  \n(IF MORE THAN THIS CONTINUE)\n")
 	// ps1y4o := fmt.Sprintf("I am currently not ready to automate this order yet! \n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Message @XskotosX On Telegram This: \n YES IT HAS TO LOOK LIKE THIS.")
 	
-	psauyh := fmt.Sprintf("\n { ---Anonymous Cashapp Accounts--- }")
+	pauyh := fmt.Sprintf("\n { ---Anonymous Cashapp Accounts--- }")
 	
 	
 	//msg := "Welcome! I'm Porus the bot. My mentor is still teahcing me things. For now, here is your allowed commands \n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /LATE for LATE orders and support instructions"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
-	a.client.SendMessage(m.Chat.ID, psauyh)
+	a.client.SendMessage(m.Chat.ID, pauyh)
 	// a.client.SendMessage(m.Chat.ID, ps1y4msg)
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
