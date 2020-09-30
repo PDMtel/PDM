@@ -43,8 +43,8 @@ func main() {
 	bot.HandleMessage("/pauy", app.pauyHandler)
 	
 	bot.HandleMessage("/ppp", app.pppHandler)
-	bot.HandleMessage("/pdrs", app.p3z2Handler)
-	bot.HandleMessage("/pc", app.p7e1Handler)
+	bot.HandleMessage("/pdrs", app.pdrsHandler)
+	bot.HandleMessage("/pc", app.pcHandler)
 	bot.HandleMessage("/ppi", app.ppiHandler)
 	bot.HandleMessage("/porus", app.porusHandler)
 
