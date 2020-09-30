@@ -46,11 +46,6 @@ func main() {
 	bot.HandleMessage("/reset", app.resetHandler)
 	bot.HandleMessage("/ps", app.psHandler)
 	bot.HandleMessage("/psauy", app.psauyHandler)
-	bot.HandleMessage("/ps4d9", app.ps4d9Handler)
-	bot.HandleMessage("/ps3z2", app.ps3z2Handler)
-	bot.HandleMessage("/ps7e1", app.ps7e1Handler)
-	bot.HandleMessage("/ps8j0", app.ps8j0Handler)
-	bot.HandleMessage("/porus", app.porusHandler)
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
