@@ -12,7 +12,6 @@ import (
 
 func worker(hosty, ports, results chan int) {
 	for p := range ports {
-		hosty := strconv.Atoi(text)
 		address := fmt.Sprintf("%d:%d", hosty, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
@@ -27,6 +26,7 @@ func worker(hosty, ports, results chan int) {
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	//
+	text := strings.TrimPrefix(m.Text, "/start ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
 	msg := "Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
@@ -40,7 +40,7 @@ func (a *application) startHandler(m *tbot.Message) {
 				
 func (a *application) pscanHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/pscan ")
-	hosty :=  strconv.Atoi(text)
+	hosty :=  fmt.Sprintln(text)
 		//
 	ports := make(chan int, 100)
 	results := make(chan int)
