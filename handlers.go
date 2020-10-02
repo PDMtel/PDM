@@ -11,6 +11,34 @@ import (
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
+	//
+	ports := make(chan int, 100)
+	results := make(chan int)
+	var openports []int
+	
+	for i := 0;i < cap(ports); i++{
+		go worker(ports, results)
+	}
+	
+	go func() {
+		for i := 1; i <= 1024; i++ {
+			ports <- i
+		}
+	}()
+	for i := 0; i < 1024; i++ {
+		port := <-results
+		if port != 0 {
+			openports = append(openports, port)
+		}
+	}
+	close(ports)
+	cloe(results)
+	sort.Ints(openports)
+	for _, port := range openports {
+		fmt.Printf("%d open\n", port)
+	}
+	
+	//
 	text := strings.TrimPrefix(m.Text, "/start ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
@@ -21,6 +49,27 @@ func (a *application) startHandler(m *tbot.Message) {
 	// resourcefulness or expediency
 	
 }
+func worker(ports, results chan int) {
+	for p := range ports {
+		address := fmt.Sprintf("scanme.nmap.org:%d, p)
+		conn, err := net.Dial("tcp", address)
+		if err != nil {
+			results <- 0
+			continue
+		}
+		conn.Close()
+		results <- p
+	}
+}				       
+				
+
+
+
+
+
+
+
+
 func (a *application) porusHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
