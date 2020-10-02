@@ -4,16 +4,20 @@ package main
 
 import (
 	"fmt"
-
+	"os"
+	"strings"
+	"unicode/utf8"
+	
 	"github.com/yanzay/tbot/v2"
 )
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
+	text := strings.TrimPrefix(m.Text, "/start ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
 	msg := "Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
-	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, m.Text) //Notify me of commands sent
+	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency
