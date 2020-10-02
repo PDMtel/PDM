@@ -29,7 +29,8 @@ func GetLatestBlogTitles(url string) (string, error) {
 		return "", err
 	}
 	
-	doc, err != nil {
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
 		return "", err
 	}
 	titles := ""
@@ -48,7 +49,6 @@ func (a *application) startHandler(m *tbot.Message) {
 	}
 	fmt.Println("Blog Titles:")
 		    fmt.Printf(blogtitles)
-}
 	
 	
 	text := strings.TrimPrefix(m.Text, "/start ")
