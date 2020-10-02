@@ -11,6 +11,7 @@ import (
 
 func worker(hosty, ports, results chan int) {
 	for p := range ports {
+		hosty := strconv.Atoi(text)
 		address := fmt.Sprintf("%d:%d", hosty, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
@@ -69,7 +70,7 @@ func (a *application) pscanHandler(m *tbot.Message) {
 	}
 	
 	
-	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
 	msg := "[InternalMem@Porus]:\n I was named Porus for my soon to come resourcefulness or expediency. \n I will: \n> Securely handle orders available for automation from the payment to delivery \n>Generate business addresses & shipping labels for you \n>Provide Anonymous Tracking Check!\n> Provide automated recon on targets(data; public/private records, reverse-search(license plates, emails, usernames, etc), much more!) "
 	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text) //Notify me of commands sent
