@@ -142,7 +142,7 @@ func (a *application) scammerHandler(m *tbot.Message) {
 	// resourcefulness or expediency	
 }
 
-func (a *application) scammeriHandler(m *tbot.Message) {
+func (a *application) cammeriHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
 	
