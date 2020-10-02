@@ -51,6 +51,8 @@ func main() {
 	bot.HandleMessage("/supp", app.suppHandler)
 	bot.HandleMessage("/pscan", app.pscanHandler)
 	bot.HandleMessage("/orderi", app.orderiHandler)
+	bot.HandleMessage("/scammer", app.orderiHandler)
+	bot.HandleMessage("/scammeri", app.orderiHandler)
 	
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
