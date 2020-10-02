@@ -45,16 +45,16 @@ func GetLatestBlogTitles(url string) (string, error) {
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=LH105020716US")
+	//blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=LH105020716US")
 	// LH105020716US
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println("Blog Titles:")
-	fmt.Printf(blogTitles)
+	//if err != nil {
+	//	log.Println(err)
+	//}
+	//fmt.Println("Blog Titles:")
+	//fmt.Printf(blogTitles)
 	
 	
-	text := strings.TrimPrefix(m.Text, "/start ")
+	//text := strings.TrimPrefix(m.Text, "/start ")
 	//adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
 	msg := "\n Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
