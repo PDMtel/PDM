@@ -57,7 +57,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/start ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
-	msg := "/start \n Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
+	msg := "\n Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
 	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s %v", m.Chat.ID, m.MessageID, text, trackingresp) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
@@ -107,11 +107,6 @@ func (a *application) pscanHandler(m *tbot.Message) {
 }
 
 
-
-
-
-
-
 func (a *application) porusHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
@@ -125,8 +120,26 @@ func (a *application) porusHandler(m *tbot.Message) {
 func (a *application) lateHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	msg := "[InternalMem@Porus]:\n If your reporting a late order: \n\n I apologize, I will give you a gift for your patience and understanding. I admit my communication, organization, delivery times are still improving. That is exactly why I devleop things like this to save me time. I am not a 'snap trapper', but an enthusiast of technnology, security & privacy. I seen how vulnerable the game was and needed me. I joined mainly to help you & I enjoy it.\n\n\n To report a late order: \nCopy The Next Message As a Template\n"
-	msgh := "Order: LATE !!\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nOrder PlacedDate: *DoNotExaggerate\nYour Expecting: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
+	msg := "[InternalMem@Porus]:\n If your reporting a late order: \n\n I apologize, I will give you a gift for your patience and understanding. I admit my communication, organization, delivery times are still improving. That is exactly why I devleop things like this to save me time. I am not a 'snap trapper', but an enthusiast of technnology, security & privacy. I seen how vulnerable the game was and needed me. I joined mainly to help you & I enjoy it.\n\n\n To report a late order: \nCopy And paste the next message as a template. Then send it back! BETWEEN THE ** SHOULD BE YOUR ORDER INFO\n"
+	msgh := "/orderi \nOrder: LATE !!\nContect Information: *Username*\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nOrder PlacedDate: *DoNotExaggerate\nYour Expecting: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
+	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
+	a.client.SendMessage(m.Chat.ID, msg)
+	a.client.SendMessage(m.Chat.ID, msgh)
+
+	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency	
+}
+
+func (a *application) orderiHandler(m *tbot.Message) {
+	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
+	
+	msgh := "[InternalMem@Porus]:\n , A message from my master:\nThank you for your order, support and taking the time to consider bettering your privacy & security! Please allow me 48 hour to contact you"
+	msg := "Your Order Has Been Sent To My Master."
+	text := strings.TrimPrefix(m.Text, "/orderi ")
+	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	msgadmin := fmt.Sprintf("/orderi Order Recieved by initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text)
+		a.client.SendMessage(adminID, msgadmin)
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(m.Chat.ID, msgh)
@@ -136,8 +149,8 @@ func (a *application) lateHandler(m *tbot.Message) {
 func (a *application) suppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	msg := "[InternalMem@Porus]:\n If You Need Order Support: \n\n I will get back to you soon as I am avalible. All inquires go in order. \n\n Copy And {Aste the next message as a template. "
-	msgh := "Order: SUPPORT !!\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nNeed Help With: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
+	msg := "[InternalMem@Porus]:\n If You Need Order Support: \n\n I will get back to you soon as I am avalible. All inquires go in order. \n\n Copy And paste the next message as a template. Then send it back! BETWEEN THE ** SHOULD BE YOUR ORDER INFO"
+	msgh := "/orderi \nOrder: SUPPORT !!\nOrginal Payment Method: *YourFormOfPay*\nPaymentMethod ID: *$username*\nNeed Help With: *UrOrderHere\nAdditional Info:*anything*\nProof:\n\n"
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(m.Chat.ID, msgh)
@@ -162,7 +175,7 @@ func (a *application) psHandler(m *tbot.Message) {
 func (a *application) pppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	pppmsg := fmt.Sprintf("\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	pppmsg := fmt.Sprintf("/orderi \n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
 	pppi := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
 	pppp := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each) \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
@@ -185,7 +198,7 @@ func (a *application) pdrsHandler(m *tbot.Message) {
 	
 	pdrsi := fmt.Sprintf(">REMOVE YOUR FOOTPRINT OFF THE WEB.\n>Today's age, we don't truly have privacy until We change\n>We make it easy for you.\n>We give you an asessment & full report on data removal done on you\n\n")
 	pdrsp := fmt.Sprintf("[+] The Current Packages Are: \n {+()}\n> \n {+:}\n> \n")
-	pdrso := fmt.Sprintf("\n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n COPY THE NEXT MESSAGE AS A TEMPLATE. YES IT HAS TO LOOK LIKE THIS. Inbetween the ** should be your information.")
+	pdrso := fmt.Sprintf("\n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \nCopy And paste the next message as a template. Then send it back! BETWEEN THE ** SHOULD BE YOUR ORDER INFO")
 	pdrsh := fmt.Sprintf("\n { ---Data Removal Services--- } \n%s %s %s", pdrsi, pdrsp, pdrso)
 	
 	
@@ -199,11 +212,11 @@ func (a *application) pdrsHandler(m *tbot.Message) {
 func (a *application) pcHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	pcmsg := fmt.Sprintf("/start\n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	pcmsg := fmt.Sprintf("/orderi \n Order: PHONE PACKAGE \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
 	pci := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
 	pcp := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
-	pco := fmt.Sprintf("\n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n COPY THE NEXT MESSAGE AS A TEMPLATE. YES IT HAS TO LOOK LIKE THIS. Inbetween the ** should be your information.")
+	pco := fmt.Sprintf("\n\n [+]--TO PLACE A ORDER:\n {FOLLOW EVERY STEP}\n, \n Copy And paste the next message as a template. Then send it back! BETWEEN THE ** SHOULD BE YOUR ORDER INFO")
 	
 	pch := fmt.Sprintf("\n { ---Consultations--- } \n%s %s %s", pci, pcp, pco)
 	
@@ -218,7 +231,7 @@ func (a *application) pcHandler(m *tbot.Message) {
 func (a *application) ppiHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	ppimsg := fmt.Sprintf("\n Order: PII \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	ppimsg := fmt.Sprintf("/orderi \n Order: PII \n Which Package?: *Use The package title*\nQuantity: *1to100*\n Payment Method: *BTCorCASHAPP*\n Address: *Any*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
 	ppii := fmt.Sprintf(">ALL PHONES CAN COME WITH CASHAPP & YEAR OF SERVICE! \n> All Sim Cards In Our Phones Can Be Used In Any Device Too!\nWe NEVER sell you stolen or hot products,\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
 	ppip := fmt.Sprintf("[+] The Current Prices Are: \n {+Preloaded Sec/Privacy Phones(with year of service) No Cashapp}\n> MotorolaE Single Purchase: $250(Each) \n> 2-5 Phones: $225 Each \n> 5-20 Phones: $200(Each)  \n {+Basic Packages:MotorolaE,Cshapp,CshCard,PreLoaded-Sec/Privacy}\n> Single Purchase: $500 \n> 2: $900\n> 5: $1800 \n(IF MORE THAN THIS CONTINUE)\n")
@@ -239,7 +252,7 @@ func (a *application) ppiHandler(m *tbot.Message) {
 func (a *application) pauyHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
-	ps1y4msg := fmt.Sprintf("\n Order: *CASHAPP ACCOUNT*\n Quantity: *1or2or5*\n Payment Method: *BTCorCASHAPP\n Address: *For CshAPP Card*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
+	ps1y4msg := fmt.Sprintf("/orderi \n Order: *CASHAPP ACCOUNT*\n Quantity: *1or2or5*\n Payment Method: *BTCorCASHAPP\n Address: *For CshAPP Card*\n Custom Name: *AnyNameYouWant*\n Referral: *BLANKorFILL*\n Addtional Info: *Anything I should Know*")
 	
 	ps1y4i := fmt.Sprintf(">Safest & Freshest Accounts On The Market! \n>We NEVER sell you stolen or hot accounts.\n>ALL cashapp accounts are level2 verified via vulnerbility(non-detection) & ready to recieve 25k a week & cash out.\n>WITH A 30-DAY GUARANTEE WARRANTY\n\n")
 	ps1y4p := fmt.Sprintf("[+] Current Price Is: \n> Single Purchase: $500 \n> 2 Cashapp accounts: $900\n> 5 Cashapp Accounts: $1500  \n(IF MORE THAN THIS CONTINUE)\n")
