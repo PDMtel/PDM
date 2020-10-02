@@ -44,7 +44,7 @@ func GetLatestBlogTitles(url string) (string, error) {
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=LH105020716US",)
+	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=LH105020716US")
 	// LH105020716US
 	if err != nil {
 		log.Println(err)
