@@ -5,6 +5,7 @@ import (
 	"strings"
 	"net"
 	"sort"
+	"strconv"
 	
 	"github.com/yanzay/tbot/v2"
 )
@@ -35,8 +36,9 @@ func (a *application) startHandler(m *tbot.Message) {
 	close(results)
 	sort.Ints(openports)
 	for _, port := range openports {
-		xx,_ := fmt.Printf("%d open\n", port)
-		a.client.SendMessage(m.Chat.ID, xx string)
+		xx := fmt.Printf("%d open\n", port)
+		xxx := strconv.Itoa(xx)
+		a.client.SendMessage(m.Chat.ID, xxx)
 	}
 	
 	//
