@@ -5,7 +5,9 @@ import (
 	"strings"
 	"net"
 	"sort"
-	
+	"log"
+	"net/http"
+	"github.com/PuerkitoBio/goquery"
 	"github.com/yanzay/tbot/v2"
 )
 
