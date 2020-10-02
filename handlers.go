@@ -151,7 +151,7 @@ func (a *application) scammeriHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/scammeri ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	msgadmin := fmt.Sprintf("/scammeri Report Recieved by initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text)
-		a.client.SendMessage(adminID, msgadmin)
+	a.client.SendMessage(adminID, msgadmin)
 	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
 	a.client.SendMessage(m.Chat.ID, msgh)
