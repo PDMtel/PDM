@@ -9,9 +9,9 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
-func worker(ports, results chan int) {
+func worker(hosty, ports, results chan int) {
 	for p := range ports {
-		address := fmt.Sprintf("scanme.nmap.org:%d", p)
+		address := fmt.Sprintf("%s:%d", hosty, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
@@ -25,12 +25,28 @@ func worker(ports, results chan int) {
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	//
+	text := strings.TrimPrefix(m.Text, "/start ")
+	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
+	msg := "Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
+	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text) //Notify me of commands sent
+	a.client.SendMessage(m.Chat.ID, msg)
+	a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency
+	
+}
+				       
+				
+func (a *application) pscanHandler(m *tbot.Message) {
+	text := strings.TrimPrefix(m.Text, "/pscan ")
+	hosty := text
+		//
 	ports := make(chan int, 100)
 	results := make(chan int)
 	var openports []int
 	
 	for i := 0;i < cap(ports); i++ {
-		go worker(ports, results)
+		go worker(hosty, ports, results)
 	}
 	
 	go func() {
@@ -52,20 +68,16 @@ func (a *application) startHandler(m *tbot.Message) {
 		a.client.SendMessage(m.Chat.ID, xx)
 	}
 	
-	//
-	text := strings.TrimPrefix(m.Text, "/start ")
-	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
-	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
-	msg := "Welcome! I'm Porus the bot. \n\n My mentor is still teahcing me things.\n For now, here is your allowed commands \n\n[+] Commands:\n1. Use /porus to know more about me(porus) and why I was developed \n2. Use /ps to know avalaible products & services with order instructions \n3. Use /late To report a late/missing order\n4. Use /supp For Support An Your Old/Current Order\n\nUse /methods For avalible sacue for sell\n\nUse /legalflips For legal investments\nUse /freetip for a free random tip "
+	
+	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
+	msg := "[InternalMem@Porus]:\n I was named Porus for my soon to come resourcefulness or expediency. \n I will: \n> Securely handle orders available for automation from the payment to delivery \n>Generate business addresses & shipping labels for you \n>Provide Anonymous Tracking Check!\n> Provide automated recon on targets(data; public/private records, reverse-search(license plates, emails, usernames, etc), much more!) "
 	msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text) //Notify me of commands sent
 	a.client.SendMessage(m.Chat.ID, msg)
-	a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
-	// resourcefulness or expediency
-	
+	a.client.SendMessage(adminID, msgadmin)
+	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency	
 }
-				       
-				
-
 
 
 
