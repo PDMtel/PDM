@@ -13,7 +13,7 @@ import (
 
 func worker(ports, results chan int) {
 	for p := range ports {
-		address := fmt.Sprintf("scanme.nmap.org:%v", text, p)
+		address := fmt.Sprintf("scanme.nmap.org:%v", p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
@@ -44,13 +44,13 @@ func GetLatestBlogTitles(url string) (string, error) {
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=%v", text)
+	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=LH105020716US",)
 	// LH105020716US
 	if err != nil {
 		log.Println(err)
 	}
 	fmt.Println("Blog Titles:")
-		    fmt.Printf(blogtitles)
+		    fmt.Printf(blogTitles)
 	
 	
 	text := strings.TrimPrefix(m.Text, "/start ")
