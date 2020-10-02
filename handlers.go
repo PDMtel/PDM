@@ -32,7 +32,7 @@ func (a *application) startHandler(m *tbot.Message) {
 		}
 	}
 	close(ports)
-	cloe(results)
+	close(results)
 	sort.Ints(openports)
 	for _, port := range openports {
 		fmt.Printf("%d open\n", port)
