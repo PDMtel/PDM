@@ -5,7 +5,6 @@ import (
 	"strings"
 	"net"
 	"sort"
-	"strconv"
 	
 	"github.com/yanzay/tbot/v2"
 )
