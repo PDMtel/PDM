@@ -130,6 +130,36 @@ func (a *application) lateHandler(m *tbot.Message) {
 	// resourcefulness or expediency	
 }
 
+func (a *application) scammerHandler(m *tbot.Message) {
+	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
+	msg := "[InternalMem@Porus]:\n I'm sorry to hear you or someone you know was scammed. /n I can try tempting my master to help & bring justice, but he's pretty busy. \nThe false reports(not enough proof) get thrown out & the others get put on a waiting list. \nA team goes down the line pulling any information on the target & begings the proccess of what we call robinhood. \n\n Please Copy The Next Message I Send You And Edit It, Send It Back Here!"
+	msgh := "/scammeri \nREPORT: SCAMMER\nDate Of Occurrance:**\nIs this a select scammer?:**\n ALL scammers contact information:**\n\nThe full story:**\n\nOrder Description & Amount:\n\nYour contact Information:**(This is so if we do anything, we can give you the satisfaction and or any money out of what we do to him/her)\n\n\nPROOF: (What proof you have. Must be valid. Photoshop doesn't work with us bud)\n"
+	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
+	a.client.SendMessage(m.Chat.ID, msg)
+	a.client.SendMessage(m.Chat.ID, msgh)
+	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency	
+}
+
+func (a *application) scammeriHandler(m *tbot.Message) {
+	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
+	
+	msgh := "[InternalMem@Porus]:\n , A message from my master:\nThis game is too fucked up, If someones going to spend all their time scamming on snapchat they might as well just do fraud??\nLet's bring some of these scammers the pain they deserve ;)"
+	msg := "Your Report Has Been Sent To My Master."
+	text := strings.TrimPrefix(m.Text, "/scammeri ")
+	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
+	msgadmin := fmt.Sprintf("/scammeri Report Recieved by initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, text)
+		a.client.SendMessage(adminID, msgadmin)
+	//msgadmin := fmt.Sprintf("/start command initiated by Chat ID %s:%d:%s", m.Chat.ID, m.MessageID, usercomm) //Notify me of commands sent
+	a.client.SendMessage(m.Chat.ID, msg)
+	a.client.SendMessage(m.Chat.ID, msgh)
+	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
+	// resourcefulness or expediency	
+}
+
+
 func (a *application) orderiHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
@@ -146,6 +176,10 @@ func (a *application) orderiHandler(m *tbot.Message) {
 	// a.client.SendMessage(adminID, msgadmin) //notify me of commadns sent
 	// resourcefulness or expediency	
 }
+
+
+
+
 func (a *application) suppHandler(m *tbot.Message) {
 	// adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", tbot.CallbackQuery.Data)
