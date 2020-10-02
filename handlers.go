@@ -5,14 +5,13 @@ import (
 	"strings"
 	"net"
 	"sort"
-	"strconv"
 	
 	"github.com/yanzay/tbot/v2"
 )
 
-func (hosty int) worker(ports, results chan int) {
+func worker(ports, results chan int) {
 	for p := range ports {
-		address := fmt.Sprintf("%v:%v", hosty, p)
+		address := fmt.Sprintf("scanme.nmap.org:%v", p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
@@ -36,8 +35,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	// resourcefulness or expediency
 	
 }
-				       
-				
+				       		
 func (a *application) pscanHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/pscan ")
 		//
@@ -46,7 +44,7 @@ func (a *application) pscanHandler(m *tbot.Message) {
 	var openports []int
 	
 	for i := 0;i < cap(ports); i++ {
-		go worker(hosty, ports, results)
+		go worker(ports, results)
 	}
 	
 	go func() {
