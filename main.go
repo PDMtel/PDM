@@ -52,7 +52,7 @@ func main() {
 	bot.HandleMessage("/pscan", app.pscanHandler)
 	bot.HandleMessage("/orderi", app.orderiHandler)
 	bot.HandleMessage("/scammer", app.scammerHandler)
-	bot.HandleMessage("/cammeri", app.scammeriHandler)
+	bot.HandleMessage("/cammeri", app.cammeriHandler)
 	
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
