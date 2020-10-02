@@ -9,7 +9,7 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
-func worker(ports, results chan int) {
+func (m *tbot.Message) worker(ports, results chan int) {
 	text := strings.TrimPrefix(m.Text, "/pscan ")
 	for p := range ports {
 		address := fmt.Sprintf("%v:%v", text, p)
