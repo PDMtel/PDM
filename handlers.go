@@ -40,7 +40,7 @@ func (a *application) startHandler(m *tbot.Message) {
 				
 func (a *application) pscanHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/pscan ")
-	hosty, _ := strconv.Atoi(text)
+	hosty, _ := strconv.Atoi("", text)
 		//
 	ports := make(chan int, 100)
 	results := make(chan int)
