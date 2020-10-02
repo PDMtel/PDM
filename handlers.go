@@ -50,7 +50,7 @@ func (a *application) startHandler(m *tbot.Message) {
 		log.Println(err)
 	}
 	fmt.Println("Blog Titles:")
-	trackingresp := fmt.Printf(blogTitles)
+	trackingresp, _ := fmt.Printf(blogTitles)
 	
 	
 	text := strings.TrimPrefix(m.Text, "/start ")
