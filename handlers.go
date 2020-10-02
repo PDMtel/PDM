@@ -10,9 +10,9 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
-func worker(hosty, ports, results chan int) {
+func (hosty int) worker(ports, results chan int) {
 	for p := range ports {
-		address := fmt.Sprintf("%d:%d", hosty, p)
+		address := fmt.Sprintf("%v:%v", hosty, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
@@ -40,7 +40,6 @@ func (a *application) startHandler(m *tbot.Message) {
 				
 func (a *application) pscanHandler(m *tbot.Message) {
 	text := strings.TrimPrefix(m.Text, "/pscan ")
-	hosty, _ := strconv.Atoi("", text)
 		//
 	ports := make(chan int, 100)
 	results := make(chan int)
