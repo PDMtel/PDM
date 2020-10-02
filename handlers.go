@@ -10,6 +10,19 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
+func worker(ports, results chan int) {
+	for p := range ports {
+		address := fmt.Sprintf("scanme.nmap.org:%d", p)
+		conn, err := net.Dial("tcp", address)
+		if err != nil {
+			results <- 0
+			continue
+		}
+		conn.Close()
+		results <- p
+	}
+}
+
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	//
@@ -17,7 +30,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	results := make(chan int)
 	var openports []int
 	
-	for i := 0;i < cap(ports); i++{
+	for i := 0;i < cap(ports); i++ {
 		go worker(ports, results)
 	}
 	
@@ -36,9 +49,8 @@ func (a *application) startHandler(m *tbot.Message) {
 	close(results)
 	sort.Ints(openports)
 	for _, port := range openports {
-		xx,_ := fmt.Println("%d open\n", port)
-		xxx := strconv.Itoa(xx)
-		a.client.SendMessage(m.Chat.ID, xxx)
+		xx,_ := fmt.Sprintf("%d open\n", port)
+		a.client.SendMessage(m.Chat.ID, xx)
 	}
 	
 	//
@@ -52,18 +64,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	// resourcefulness or expediency
 	
 }
-func worker(ports, results chan int) {
-	for p := range ports {
-		address := fmt.Sprintf("scanme.nmap.org:%d", p)
-		conn, err := net.Dial("tcp", address)
-		if err != nil {
-			results <- 0
-			continue
-		}
-		conn.Close()
-		results <- p
-	}
-}				       
+				       
 				
 
 
