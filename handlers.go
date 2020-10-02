@@ -10,8 +10,9 @@ import (
 )
 
 func worker(ports, results chan int) {
+	text := strings.TrimPrefix(m.Text, "/pscan ")
 	for p := range ports {
-		address := fmt.Sprintf("scanme.nmap.org:%v", p)
+		address := fmt.Sprintf("%v:%v", text, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
