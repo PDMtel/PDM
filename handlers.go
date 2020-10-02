@@ -35,10 +35,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	close(results)
 	sort.Ints(openports)
 	for _, port := range openports {
-		x,_ string := fmt.Printf("%d open\n", port)
-		if err != nil {
-			continue
-		}
+		x,_ := fmt.Printf("%d open\n", port)
 		a.client.SendMessage(m.Chat.ID, x)
 	}
 	
