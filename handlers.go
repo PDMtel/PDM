@@ -22,9 +22,35 @@ func worker(ports, results chan int) {
 	}
 }
 
+
+func GetLatestBlogTitles(url string) (string, error) {
+	resp, err := http.Get(url)
+	if err!= nil {
+		return "", err
+	}
+	
+	doc, err != nil {
+		return "", err
+	}
+	titles := ""
+	doc.Find(".expected_delivery").Each(func(i int, s *goquery.Selection) {
+		titles += "- " + s.Text() + ""
+	})
+	return titles, err
+}
+
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	//
+	blogTitles, err := GetLatestBlogTitles("https://tools.usps.com/go/TrakingConfirmAction?qtc_tLabels1=%v", text)
+	// LH105020716US
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println("Blog Titles:")
+		    fmt.Printf(blogtitles)
+}
+	
+	
 	text := strings.TrimPrefix(m.Text, "/start ")
 	adminID := fmt.Sprintf("1331473188") //Notify me of commands sent
 	// usercomm := fmt.Sprintf("%s", m.CallbackQuery.Data)
