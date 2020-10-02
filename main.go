@@ -50,6 +50,7 @@ func main() {
 	bot.HandleMessage("/late", app.lateHandler)
 	bot.HandleMessage("/supp", app.suppHandler)
 	bot.HandleMessage("/pscan", app.pscanHandler)
+	bot.HandleMessage("/orderi", app.orderiHandler)
 	
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
