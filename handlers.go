@@ -11,7 +11,7 @@ import (
 
 func worker(hosty, ports, results chan int) {
 	for p := range ports {
-		address := fmt.Sprintf("%s:%d", hosty, p)
+		address := fmt.Sprintf("%d:%d", hosty, p)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			results <- 0
